@@ -9,8 +9,6 @@ load_dotenv()
 # Now you can access environment variables like this:
 api_key = os.getenv("OPENAI_API_KEY")
 
-print(api_key)
-
 
 # creating handoffs functions
 def handoff_to_weather_agent():
@@ -37,3 +35,15 @@ weather_agent = Agent(
     instructions="You handle only weather-related queries.",
     functions=[handoff_to_math_agent],
 )
+
+# Initialize the Swarm client
+client = Swarm()
+
+# Test handoff by asking a math question to the weather agent
+messages = [{"role": "user", "content": "What is 2+2?"}]
+handoff_response = client.run(agent=weather_agent, messages=messages)
+print(handoff_response.messages[-1]["content"])
+
+# Response:
+# Handing off to Math Agent
+# The answer to 2 + 2 is 4.
