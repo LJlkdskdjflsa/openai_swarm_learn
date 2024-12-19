@@ -6,9 +6,12 @@ authors = ["LJlkdskdjflsa <liliangjya@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.8,<3.12"
 swarm = {git = "https://github.com/openai/swarm.git"}
 python-dotenv = "^1.0.1"
+langchain-chroma = "^0.1.4"
+langchain-openai = "^0.2.13"
+langchain-community = "^0.3.12"
 
 [tool.poetry.group.dev.dependencies]
 

@@ -15,6 +15,12 @@ This project leverages OpenAI's Assistant API to create a swarm of AI agents tha
 - Concurrent task execution
 - Emergent problem-solving through agent collaboration
 
+## Prerequisites
+
+- Python 3.8x
+- [Poetry](https://python-poetry.org/docs/#installation) for dependency management
+- OpenAI API key (with access to Assistants API)
+
 ## Installation
 
 ```bash
@@ -22,19 +28,12 @@ This project leverages OpenAI's Assistant API to create a swarm of AI agents tha
 git clone https://github.com/yourusername/openai_swarm_learn.git
 cd openai_swarm_learn
 
-# Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
+# Install dependencies using Poetry
+poetry install
 
-# Install dependencies
-pip install -r requirements.txt
+# Activate the Poetry virtual environment
+poetry shell
 ```
-
-## Requirements
-
-- Python 3.8+
-- OpenAI API key (with access to Assistants API)
-- Additional dependencies listed in `requirements.txt`
 
 ## Configuration
 
@@ -55,6 +54,19 @@ The swarm consists of multiple AI agents, each powered by OpenAI's Assistant API
 - Share tasks and information
 - Work on problems collaboratively
 - Specialize in different aspects of problem-solving
+
+## Development
+
+```bash
+# Install development dependencies
+poetry install --with dev
+
+# Run tests
+poetry run pytest
+
+# Format code
+poetry run black .
+```
 
 ## Contributing
 

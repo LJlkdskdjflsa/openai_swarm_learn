@@ -47,3 +47,18 @@ print(handoff_response.messages[-1]["content"])
 # Response:
 # Handing off to Math Agent
 # The answer to 2 + 2 is 4.
+
+
+messages = [
+    {"role": "user", "content": "How is the weather in Canada in December?"},
+    {
+        "role": "assistant",
+        "content": "Canada generally experiences cold weather during December, with varying conditions depending on the region. Coastal areas like Vancouver may have milder temperatures, while areas like Toronto, Ottawa, and Montreal see cooler, snowy conditions. Northern regions experience extreme cold. Checking a reliable weather service will provide the most accurate information.",
+    },
+]
+response = client.run(agent=math_agent, messages=messages)
+print(response.messages[-1]["content"])
+
+# Response:
+# Handing off to Weather Agent
+# Canada generally experiences cold weather during December, with varying conditions depending on the region. Coastal areas like Vancouver may have milder temperatures, while areas like Toronto, Ottawa, and Montreal see cooler, snowy conditions. Northern regions experience extreme cold. Checking a reliable weather service will provide the most accurate information.
